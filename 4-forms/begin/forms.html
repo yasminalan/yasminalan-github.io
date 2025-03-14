@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Alien Abduction Order Form</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Coming+Soon&family=Playwrite+AU+SA:wght@100..400&display=swap"
+      rel="stylesheet"
+    />
+    <link href="css/forms.css" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  </head>
+  <body>
+    <div class="wrapper">
+      <section>
+        <h1>Alien Abduction Order Form</h1>
+        <p>
+          Fill out the form below to place an order for an alien abduction by
+          one of our fine UFOs.
+        </p>
+        <form
+          action="https://e3vwdl4bpd.execute-api.us-west-2.amazonaws.com/default/API2SES"
+          method="POST"
+        >
+          <!-- Kullanıcıdan görünmeden belirli bir değeri sunucuya göndermek için kullanılır. -->
+          <input
+            type="hidden"
+            name="send_to"
+            value="yasemin.alan@powercoders.org"
+          />
+
+          <fieldset>
+            <!-- fieldset form etrafinda kutu olusturur. -->
+            <legend>Your contact information</legend>
+            <!-- legend describes the fieldset. sort of a title for the fieldset. Bu yuzden fieldset ile beraber kullanilir. -->
+            <label for="name">Your name </label>
+            <input type="text" id="name" name="name" />
+
+            <!-- id ye ve for icin yazdigimiz degerler ayni olmali. -->
+            <!-- for özelliği sayesinde, kullanıcı etikete tıkladığında ilgili giriş (<input>) alanı otomatik olarak seçilir. -->
+
+            <!-- id: Tarayıcı içinde ve JavaScript kodunda öğeyi seçmek için.
+						name: Form verilerini sunucuya gönderirken hangi isimle gönderileceğini belirlemek için.
+						for: Label ile input arasında bağlantı kurmak için. -->
+
+            <label for="phone">Phone number</label>
+            <input
+              type="tel"
+              id="phone"
+              name="phone"
+              placeholder="Don't forget your area code!"
+            />
+
+            <!-- tel, İngilizce "telephone" (telefon) kelimesinden gelir ve telefon numarası girişleri için özel olarak tasarlanmış bir input türüdür. -->
+
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" />
+          </fieldset>
+
+          <fieldset>
+            <legend>About your abduction</legend>
+            <label for="date">Requested date</label>
+            <input type="date" id="date" name="date" />
+            <label for="qty">How many people would you like abducted?</label>
+            <input type="number" id="qty" name="qty" min="1" max="10" />
+            <p>What type of UFO do you prefer?</p>
+            <label>
+              <input type="radio" name="ufotype" value="classic" checked />
+              <!-- checked default selection -->
+              Classic oval UFOs
+            </label>
+            <!-- Aynı name değerine sahip radio butonları bir grup oluşturur ve sadece bir tanesi seçilebilir. -->
+
+            <!-- value özelliği, kullanıcının yaptığı seçimi belirlemek ve form gönderildiğinde hangi değerin sunucuya gideceğini belirtmek için kullanılır. -->
+
+            <!-- <label> etiketi sayesinde sadece küçük radyo butonuna değil, yazıya da tıklayarak seçim yapabilirsin. -->
+
+            <label>
+              <input type="radio" name="ufotype" value="starwars" />
+              Star Wars-style Imperial cruiser
+            </label>
+            <label>
+              <input type="radio" name="ufotype" value="battlestar" />
+              Battlestar Galactica-style Viper
+            </label>
+            <label>
+              <input type="radio" name="ufotype" value="borgstyle" />
+              Borg-style cube
+            </label>
+            <label for="abtype"
+              >What type of abduction experience do you want?</label
+            >
+            <select id="abtype" name="abtype">
+              <!-- selected: default selection -->
+              <option selected>Select one...</option>
+              <option value="tour">Tour of the solar system</option>
+              <option value="dinner">Alien dinner and discussion</option>
+              <option value="dance">Alien dance lessons</option>
+              <option value="whales">Whale watching</option>
+            </select>
+            <!-- name, form verisinin hangi isimle gönderileceğini belirler.
+						value, seçilen veya girilen değeri belirler ve form gönderildiğinde sunucuya gider. -->
+            <label for="comments">Special requests:</label>
+            <textarea
+              name="comments"
+              id="comments"
+              placeholder="Tell me everything..."
+            ></textarea>
+            <label for="subscribe">
+              <input
+                type="checkbox"
+                value="subscribe"
+                name="subscribe"
+                id="subscribe"
+                checked
+              />
+              Add me to your email list
+            </label>
+          </fieldset>
+          <button type="submit">Order your abduction experience!</button>
+        </form>
+      </section>
+      <aside>
+        <h3>Our Location</h3>
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1148.0104388627788!2d-93.27208981455742!3d44.977749844990996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x52b3329a733800b1%3A0x2e151ae0d4a5e091!2s60%20South%206th%20St%20%233625%2C%20Minneapolis%2C%20MN%2055402%2C%20Amerika%20Birle%C5%9Fik%20Devletleri!5e1!3m2!1str!2sch!4v1741956436239!5m2!1str!2sch"
+          width="400"
+          height="300"
+          style="border: 0"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+        ></iframe>
+        <address>
+          Frontend Masters &middot; 60 South 6th Street &middot; Suite 3625
+          &middot; Minneapolis, MN 55402
+        </address>
+      </aside>
+    </div>
+    <script src="js/forms.js"></script>
+  </body>
+</html>

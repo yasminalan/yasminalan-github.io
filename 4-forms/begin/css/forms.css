@@ -1,0 +1,101 @@
+html {
+  box-sizing: border-box;
+}
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-image: url(../img/galaxy.jpg);
+}
+/* from font website */
+h1,
+h3,
+legend {
+  font-family: "Coming Soon", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+/* Suan ben css doyasindayim. ../ → Bir üst klasöre çık */
+.wrapper {
+  width: 80%;
+  margin: 0 auto;
+  padding: 1em;
+  display: flex;
+  flex-flow: row nowrap;
+  background-color: #efb106;
+}
+
+/* .wrapper içinde flex-flow: row nowrap; tanımlanmış.
+Ancak eğer içindeki öğeler (input, label, vs.) toplamda .wrapper genişliğinden büyükse, tarayıcı sığdırmak için alt satıra geçirmek zorunda kalır.
+Çözüm: Eğer tüm elemanların tek satırda kalmasını istiyorsan, bunları küçültmeli veya overflow kullanarak yatay kaydırma eklemelisin. */
+
+section {
+  flex-basis: 57%;
+  margin-right: 10%;
+}
+aside {
+  flex-basis: 33%;
+}
+p,
+[for="abtype"] {
+  margin-bottom: 0;
+  margin-top: 2rem;
+  /* margin: 2rem 0 2 0; */
+}
+fieldset {
+  border: 1px solid black;
+  border-radius: 10px;
+  margin-bottom: 2rem;
+  /* fieldset etrafindaki cizgiyi ve birbirleri arasindaki bosluklari ayarladik. */
+}
+legend {
+  font-weight: bold;
+  font-size: 1.3rem;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  display: block;
+  /* border: 1px solid blue; */
+}
+label {
+  display: block;
+  padding-bottom: 0.3rem;
+}
+textarea {
+  height: 10rem;
+  padding: 1rem;
+}
+select {
+  font-size: 1rem;
+}
+button {
+  font-size: 1rem;
+  margin: 2rem 0;
+  background-color: #bb342f;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 10px;
+}
+button:hover {
+  background-color: white;
+  color: #bb342f;
+}
+input:not([type="radio"]):not([type="checkbox"]),
+textarea,
+select {
+  display: block;
+  margin-bottom: 2rem;
+  width: 20rem;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1rem;
+  padding: 0 1rem;
+  border-radius: 10px;
+  border: none;
+}
+/* radio buttonlar da input oldugu icin onlar bozuldu.
+Onlari bozmamak icin not ekledik. Koseli parantez attribute selector olarak kullanilir. Bugune kadar html tag ler seciliyordu ama aslinda attribute tagler de bu sekilde secilebilir.All the input tags but not the radio buttons. */
